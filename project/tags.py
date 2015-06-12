@@ -26,8 +26,9 @@ problemchars = re.compile(r'[=\+/&<>;\'"\?%#$@\,\. \t\r\n]')
 def key_type(element, keys):
     if element.tag == "tag":
         if 'k' in element.attrib:
-            kvalue = element.attrib['k']
+            kvalue = element.attrib['k'].strip()
             if problemchars.search(kvalue):
+                print "'" + kvalue + "'"
                 keys['problemchars'] += 1
             elif lower.match(kvalue):
                 keys['lower'] += 1
@@ -43,7 +44,7 @@ def process_map(filename):
     keys = {"lower": 0, "lower_colon": 0, "problemchars": 0, "other": 0}
     for _, element in ET.iterparse(filename):
         keys = key_type(element, keys)
-
+        element.clear()
     return keys
 
 
@@ -51,9 +52,9 @@ def process_map(filename):
 def test():
     # You can use another testfile 'map.osm' to look at your solution
     # Note that the assertions will be incorrect then.
-    keys = process_map('example.osm')
+    keys = process_map('los-angeles_california.osm')
     pprint.pprint(keys)
-    assert keys == {'lower': 5, 'lower_colon': 0, 'other': 1, 'problemchars': 1}
+#    assert keys == {'lower': 5, 'lower_colon': 0, 'other': 1, 'problemchars': 1}
 
 
 if __name__ == "__main__":

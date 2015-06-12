@@ -82,7 +82,7 @@ In particular the following things should be done:
   <nd ref="1719825889"/>
 
 should be turned into
-"node_refs": ["305896090", "1719825889"]
+"node_refs": ["305896090", "171982588'a'9"]
 """
 
 
@@ -91,7 +91,6 @@ lower_colon = re.compile(r'^([a-z]|_)*:([a-z]|_)*$')
 problemchars = re.compile(r'[=\+/&<>;\'"\?%#$@\,\. \t\r\n]')
 
 CREATED = [ "version", "changeset", "timestamp", "user", "uid"]
-
 
 def shape_element(element):
     node = {}
@@ -154,7 +153,7 @@ def test():
     # call the process_map procedure with pretty=False. The pretty=True option adds 
     # additional spaces to the output, making it significantly larger.
     data = process_map('example.osm', True)
-    #pprint.pprint(data)
+    pprint.pprint(data)
     
     assert data[0] == {
                         "id": "261114295", 

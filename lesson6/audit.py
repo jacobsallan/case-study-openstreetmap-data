@@ -9,7 +9,7 @@ Your task in this exercise has two steps:
     The function takes a string with street name as an argument and should return the fixed name
     We have provided a simple test so that you see what exactly is expected
 """
-import xml.etree.ElementTree as ET
+import xml.etree.cElementTree as ET
 from collections import defaultdict
 import re
 import pprint
@@ -60,7 +60,6 @@ def update_name(name, mapping):
         street_type = m.group()
         if street_type in mapping:
             name = name[0:len(name)-len(street_type)] + mapping[street_type]
-            
     return name
 
 

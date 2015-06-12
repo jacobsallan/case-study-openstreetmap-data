@@ -1,0 +1,16 @@
+For parsing xml without consuming my computer's memory:
+http://eli.thegreenplace.net/2012/03/15/processing-xml-in-python-with-elementtree 
+https://docs.python.org/2/library/xml.etree.elementtree.html 
+
+For auditing and fixing openstreetmap tags:
+http://wiki.openstreetmap.org/wiki/Key:building:levels 
+
+For street name abbreviations:
+http://www.semaphorecorp.com/cgi/abbrev.html
+
+For matching zip codes with cities.  Used to correct bad postal codes.
+http://www.city-data.com/ 
+http://wiki.openstreetmap.org/wiki/Tag:boundary%3Dadministrative		
+
+Explanation of the Schweitzer Falls joke.
+http://en.wikipedia.org/wiki/Jungle_Cruise
